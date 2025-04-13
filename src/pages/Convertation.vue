@@ -52,8 +52,8 @@ let currencyNames = computed(() =>
   currencyItems.value.map((item) => item.name),
 );
 
-const inputValueOne = ref<number | string>(1000);
-const inputValueTwo = ref<number | string>(0);
+const inputValueOne = ref<number>(1000);
+const inputValueTwo = ref<number>(0);
 
 const convertCurrency = () => {
   const rate = getConversionRate(
@@ -64,7 +64,7 @@ const convertCurrency = () => {
   if (selectedCurrencyOne.value === selectedCurrencyTwo.value) {
     inputValueTwo.value = inputValueOne.value;
   } else {
-    inputValueTwo.value = (Number(inputValueOne.value) * rate).toFixed(2);
+    inputValueTwo.value = (inputValueOne.value * rate).toFixed(2);
   }
 };
 
