@@ -4,13 +4,14 @@ import { ref } from "vue";
 
 export type TCurrencyItem = {
   name: string;
+  symbol: string;
 };
 
 export const useCurrencyStore = defineStore("CurrencyStore", () => {
   const currencyItems = ref<TCurrencyItem[]>([
-    { name: "usd" },
-    { name: "eur" },
-    { name: "rub" },
+    { name: "usd", symbol: "$" },
+    { name: "eur", symbol: "€" },
+    { name: "rub", symbol: "₽" },
   ]);
   const fetchUrl = ref<string>(
     "https://status.neuralgeneration.com/api/currency",

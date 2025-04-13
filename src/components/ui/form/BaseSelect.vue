@@ -43,9 +43,9 @@ const props = defineProps({
     required: true,
   },
   width: {
-    type:  [Number, String],
+    type: [Number, String],
     required: false,
-    default: 'auto'
+    default: "auto",
   },
 });
 
